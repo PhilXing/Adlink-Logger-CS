@@ -13,6 +13,7 @@ using Microsoft.Win32;
 using System.Diagnostics;
 using Atlassian.Jira;
 using System.Reflection;
+using Octokit;
 
 namespace Adlink_Logger_CS
 {
@@ -68,9 +69,35 @@ namespace Adlink_Logger_CS
 		public Form1()
 		{
 			InitializeComponent();
+
+            _ = updaterAsync();
+
 			RestoreSettings();
 		}
 
+		private async Task updaterAsync()
+        {
+			var currentVersion = new Version(Assembly.GetExecutingAssembly().GetName().Version.ToString());
+			string projectName = System.Reflection.Assembly.GetEntryAssembly().GetName().Name;
+
+			// Get an instance of the GitHub client
+			var client = new GitHubClient(new ProductHeaderValue(projectName));
+
+			// Get the latest release for the repository "user/repo"
+			var release = await client.Repository.Release.GetLatest("PhilXing", "Adlink-Logger-CS");
+
+			// Compare the version of the latest release with the current version of your software
+			if (new Version(release.TagName) > currentVersion)
+			{
+				// A newer version of the software is available
+				// Download the update package
+				//var updatePackage = await client.Repository.Release.DownloadAsset(release.Id, release.Assets[0].Id);
+				var updatePackage = await client.Repository.Release.GetAsset(release.Id, release.Assets[0].Id);
+				// Install the update package
+				// restart your software
+			}
+
+		}
 		private void Form1_FormClosing(object sender, FormClosingEventArgs e)
 		{
 			Properties.Settings.Default.F1State = this.WindowState;
@@ -601,7 +628,7 @@ namespace Adlink_Logger_CS
 							textBoxSummary.Text = issue.Summary;
 						}
                     }
-					catch (Exception ex)
+					catch
                     {
 						MessageBox.Show("Jira connection or data query error.");
                     }

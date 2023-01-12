@@ -64,9 +64,9 @@ namespace Adlink_Logger_CS
             this.buttonJiraLogin = new System.Windows.Forms.Button();
             this.groupBoxSignature = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.buttonToday = new System.Windows.Forms.Button();
             this.labelAuthor = new System.Windows.Forms.Label();
             this.labelSerialnumber = new System.Windows.Forms.Label();
+            this.buttonToday = new System.Windows.Forms.Button();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.labelProjectName = new System.Windows.Forms.Label();
             this.labelCustomerName = new System.Windows.Forms.Label();
@@ -199,7 +199,7 @@ namespace Adlink_Logger_CS
             // 
             this.comboBoxRepo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBoxRepo.FormattingEnabled = true;
-            this.comboBoxRepo.Location = new System.Drawing.Point(103, 8);
+            this.comboBoxRepo.Location = new System.Drawing.Point(103, 9);
             this.comboBoxRepo.Name = "comboBoxRepo";
             this.comboBoxRepo.Size = new System.Drawing.Size(219, 23);
             this.comboBoxRepo.TabIndex = 0;
@@ -551,17 +551,6 @@ namespace Adlink_Logger_CS
             this.tableLayoutPanel6.Size = new System.Drawing.Size(319, 111);
             this.tableLayoutPanel6.TabIndex = 0;
             // 
-            // buttonToday
-            // 
-            this.buttonToday.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonToday.Location = new System.Drawing.Point(3, 39);
-            this.buttonToday.Name = "buttonToday";
-            this.buttonToday.Size = new System.Drawing.Size(69, 29);
-            this.buttonToday.TabIndex = 5;
-            this.buttonToday.Text = "Date";
-            this.buttonToday.UseVisualStyleBackColor = true;
-            this.buttonToday.Click += new System.EventHandler(this.buttonToday_Click);
-            // 
             // labelAuthor
             // 
             this.labelAuthor.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -587,6 +576,17 @@ namespace Adlink_Logger_CS
             this.labelSerialnumber.TabIndex = 2;
             this.labelSerialnumber.Text = "Serial#";
             this.labelSerialnumber.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // buttonToday
+            // 
+            this.buttonToday.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonToday.Location = new System.Drawing.Point(3, 39);
+            this.buttonToday.Name = "buttonToday";
+            this.buttonToday.Size = new System.Drawing.Size(69, 29);
+            this.buttonToday.TabIndex = 5;
+            this.buttonToday.Text = "Date";
+            this.buttonToday.UseVisualStyleBackColor = true;
+            this.buttonToday.Click += new System.EventHandler(this.buttonToday_Click);
             // 
             // tableLayoutPanel4
             // 
@@ -655,7 +655,7 @@ namespace Adlink_Logger_CS
             this.comboBoxProjectName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBoxProjectName.DropDownWidth = 134;
             this.comboBoxProjectName.FormattingEnabled = true;
-            this.comboBoxProjectName.Location = new System.Drawing.Point(133, 7);
+            this.comboBoxProjectName.Location = new System.Drawing.Point(133, 8);
             this.comboBoxProjectName.Name = "comboBoxProjectName";
             this.comboBoxProjectName.Size = new System.Drawing.Size(189, 23);
             this.comboBoxProjectName.Sorted = true;
