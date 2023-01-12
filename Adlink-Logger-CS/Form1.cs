@@ -12,6 +12,7 @@ using System.Media;
 using Microsoft.Win32;
 using System.Diagnostics;
 using Atlassian.Jira;
+using System.Reflection;
 
 namespace Adlink_Logger_CS
 {
@@ -235,6 +236,9 @@ namespace Adlink_Logger_CS
 				this.Size = Properties.Settings.Default.F1Size;
 			}
 
+			string assemblyVersion = Assembly.GetExecutingAssembly().GetName().Version.ToString();
+			string projectName = System.Reflection.Assembly.GetEntryAssembly().GetName().Name;
+			this.Text = projectName + " " + assemblyVersion;
 			EnableControls(sender, e);
 		}
 
